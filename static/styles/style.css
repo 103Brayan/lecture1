@@ -1,0 +1,19 @@
+h2{
+  color: green;
+  text-align: center;
+}
+h3{
+  color: orange;
+  text-align: center;
+}
+p{
+  font-family: Arial,sans-serif;
+  font-size: 20px;
+  color: blue;
+  text-align: center;
+  font-weight: bold;
+}
+h4{
+  color: blue;
+  text-align: center;
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>My WebPAge</title>
+
+		<style>
+			table{
+				color: blue;
+				text-align: center;
+				border: 1px solid black ;
+				border-collapse: collapse;
+				width: 50%;
+			}
+			th,td{
+				border: 1px solid black;
+				padding: 5px;
+				background-color: lightgray;
+			}
+
+			img{
+				display: block;
+		    margin-left: auto;
+		    margin-right: auto;
+			}
+			#medio{
+				background-color: lightgray;
+				border: 5px solid black;
+			}
+			.negrita{
+				font-weight: bold;
+			}
+			.div_estilo{
+				background-color: #6697e8;
+				width : 200px;
+				height: 100px;
+				margin: 10px;
+				padding: 50px;
+				border: 5px dotted blue;
+			}
+
+			<!-- CSS SELECTORS-->
+			ol li{
+				color: red;
+			}
+			ol > li {
+				color:blue;
+			}
+
+			input[type=text]{
+
+				background-color:  #4286f4;
+			}
+			input[type=number]{
+				background-color:  #f46b41;
+			}
+			button{
+				width: 200px;
+				height: 50px;
+				font-size: 24px;
+			}
+			button:hover{
+
+				background-color: #0a83c9;
+			}
+			#bef::before{
+				content: "\21d2 click here: ";
+			}
+
+			p::selection{
+				color: #cc496e;
+				background-color: #ede217;
+			}
+
+			@media print {
+					.screen-only {
+							display: none;
+					}
+			}
+			@media (min-width: 500px) {
+				#titulo{
+					color: red;
+				}
+			}
+			@media (max-width: 499px) {
+				#titulo{
+					color: blue;
+				}
+			}
+
+			@media (min-width: 500px) {
+				#before::before{
+					content: "\21d2 Welcome large: ";
+				}
+			}
+			@media (max-width: 499px) {
+				#before::before{
+					content: "\21d2 Welcome small: ";
+				}
+			}
+
+
+
+			.containers{
+				justify-content: center;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.containers > div{
+				background-color: #fcff68;
+				font-size: 20px;
+				margin: 20px;
+				padding: 30px;
+				width: 250px;
+			}
+			.grid{
+				background-color: #f79431;
+
+				display: grid;
+				padding: 20px;
+				grid-column-gap: 20px;
+				grid-row-gap: 10px;
+				grid-template-columns: auto auto auto;
+			}
+			.grid_item{
+				background-color: white;
+				font-size: 20px;
+				margin: 20px;
+				padding: 30px;
+
+			}
+			.row > div {
+					padding: 20px;
+					background-color: #9451ff;
+					border: 1px solid black;
+					color : white;
+			}
+
+		</style>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+	</head>
+
+	<body>
+		<ul class="nav nav-pills nav-fill">
+		  <li class="nav-item">
+		    <a class="nav-link active" href="#">Active</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#">Longer nav link</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#">Link</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link disabled" href="#">Disabled</a>
+		  </li>
+		</ul>
+
+		<h1 id="titulo" style=" text-align:center; ">Welcome to my WebPage!</h1>
+
+		<p style=" text-align: center"> <a style=" text-align:center; " href="link">CLICK LINK</a> </p> 
+
+		<h2 id="before"></h2>
+
+		<div class="alert alert-primary" role="alert">
+		  A simple primary alert—check it out!
+		</div>
+		<div class="alert alert-secondary" role="alert">
+		  A simple secondary alert—check it out!
+		</div>
+		<div class="alert alert-success" role="alert">
+		  A simple success alert—check it out!
+		</div>
+
+		<div class="container">
+				<div class="row">
+						<div class="col-lg-3 col-md-6 col-sm-12">
+								This is a section.
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-12">
+								This is another section.
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-12">
+								This is a third section.
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-12">
+								This is a fourth section.
+						</div>
+				</div>
+		</div>
+
+		<div class="containers">
+				<div class="">
+					A. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					B. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					C. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					D. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					E. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					F. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					G. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					H. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					I. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					J. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					K. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="">
+					L. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+		</div>
+
+
+		<div class="grid">
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="grid_item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+		</div>
+
+		<p>Learning html branching</p>
+
+		<img src="https://pbs.twimg.com/media/DdDGChbV0AASgJN.jpg:large" width="10%" height="10%"><br/>
+
+		<h1>h1</h1>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<h4>h4</h4>
+		<h5>h5</h5>
+		<h6>h6</h6>
+
+		<ul>
+			<li>ul</li>
+			<li>ul</li>
+			<li>ul</li>
+		</ul>
+
+		<ol>
+			<li>ol</li>
+			<li>ol</li>
+			<ul>
+				<li>ul</li>
+				<li>ul</li>
+				<li>ul</li>
+			</ul>
+			<li>ol</li>
+		</ol>
+
+		<ol>
+			<li>ol</li>
+			<li>ol</li>
+			<ul>
+				<li>ul</li>
+				<li>ul</li>
+				<li>ul</li>
+			</ul>
+			<li>ol</li>
+		</ol>
+
+		<table>
+			<tr>
+				<th>column1</th>
+				<th>column2</th>
+				<th>column3</th>
+			</tr>
+			<tr>
+				<td>c1</td>
+				<td>c2</td>
+				<td>c3</td>
+			</tr>
+			<tr>
+				<td>c1</td>
+				<td>c2</td>
+				<td>c3</td>
+			</tr>
+
+		</table>
+
+		<br>
+
+		<form class="" action="www.google.com.pe" method="post">
+			<div id= "div_profile" class="">
+				<input type="text" name="name" placeholder="name">
+				<input type="password" name="password" placeholder="password">
+				<input type="number" name="age" placeholder="age">
+				<button type="button" name="button">Enviar</button>
+			</div>
+
+			<div class="div_likes">
+				Favorite color? <br>
+				<input type="radio" name="color" value="red">red
+				<input type="radio" name="color" value="blue">blue
+				<input type="radio" name="color" value="green">green
+				<input type="radio" name="color" value="other">other
+			</div>
+
+			<div class="">
+				<input name="country" list="countries" placeholder="country">
+				<datalist id="countries">
+					<option value="Peru"></option>
+					<option value="Colombia"></option>
+					<option value="Argentina"></option>
+					<option value="Venezuela"></option>
+				</datalist>
+			</div>
+		</form>
+
+		<div class="div_estilo">
+			<span class="negrita">This a DIV!</span>
+		</div>
+
+		<div id="medio" class="div_estilo">
+			This is the <span class="negrita">middle</span> 	part of my web!
+		</div>
+
+		<h2>table of contents</h2>
+		<ul>
+			<li><a  id = "bef" href="#section1">section1</a> </li>
+			<li><a id = "bef" href="#section2">section2</a> </li>
+			<li><a id = "bef" href="#section3">section3</a> </li>
+		</ul>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<h2 class="screen-only">This paragraph won't appear when you print this page.</h2>
+
+	</body>
+</html>
