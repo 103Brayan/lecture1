@@ -1,4 +1,4 @@
-from flask import Flask , render_template
+from flask import Flask , render_template, request
 import datetime
 
 app = Flask(__name__)
@@ -42,3 +42,9 @@ def hijo1():
 @app.route('/hijo2')
 def hijo2():
     return render_template("hijo2.html")
+
+@app.route('/hello',methods=["POST"])
+def hello_form():
+    nombre = request.form.get("nombre_input")
+    ape = request.form.get("apellido_input")
+    return render_template("hello.html",name = nombre,apellido = ape)

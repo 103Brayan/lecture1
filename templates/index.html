@@ -51,7 +51,7 @@
 
 			input[type=text]{
 
-				background-color:  #4286f4;
+
 			}
 			input[type=number]{
 				background-color:  #f46b41;
@@ -185,6 +185,22 @@
 			<h2>HERENCIA</h2>
 			<a href="{{url_for('hijo1')}}">hijo1</a>
 			<a href="{{url_for('hijo2')}}">hijo2</a>
+		</div>
+
+
+
+		<div id="formulario">
+			<form  action="{{url_for('hello_form')}}" method="post">
+				<div class="form-group">
+		    	<label for="formGroupExampleInput">NOMBRE</label>
+		    	<input type="text" class="form-control" id="formGroupExampleInput" placeholder="ingrese nombre" name="nombre_input">
+		  	</div>
+			  <div class="form-group">
+		    	<label for="formGroupExampleInput2">APELLIDO</label>
+		    	<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="ingrese appellido" name = "apellido_input">
+			  </div>
+				<button type="submit" value=" Send" class="btn btn-success" id="submit" />ENVIAR</button>
+			</form>
 		</div>
 
 
