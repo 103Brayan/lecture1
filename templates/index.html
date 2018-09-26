@@ -163,7 +163,30 @@
 
 		<h1 id="titulo" style=" text-align:center; ">Welcome to my WebPage!</h1>
 
-		<p style=" text-align: center"> <a style=" text-align:center; " href="link">CLICK LINK</a> </p> 
+		<p style=" text-align: center"> <a style=" text-align:center; " href="{{url_for('link')}}">CLICK LINK</a> </p>
+
+
+		<h2>{{ hola }}</h2>
+
+		{% if new_year: %}
+			<h2>YES NEW YEAR</h2>
+		{% else %}
+			<h2>NO NEW YEAR</h2>
+		{% endif %}
+
+		<h2>LOOP</h2>
+		<ul>
+			{%for nombre in names:%}
+				<li>{{nombre}}</li>
+			{%endfor%}
+		</ul>
+
+		<div id="herencia" style=" text-align: center; ">
+			<h2>HERENCIA</h2>
+			<a href="{{url_for('hijo1')}}">hijo1</a>
+			<a href="{{url_for('hijo2')}}">hijo2</a>
+		</div>
+
 
 		<h2 id="before"></h2>
 
