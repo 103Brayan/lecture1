@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Second Page
+{% endblock %}
+
+{% block body %}
+    <ul>
+      {%for note in notes:%}
+        <li>{{note}}</li>
+      {%endfor%}
+    </ul>
+
+    <div id="formulario">
+			<form  action="{{url_for('notas')}}" method="post">
+				<div class="form-group">
+		    	<label for="formGroupExampleInput">NOTA</label>
+		    	<input type="text" class="form-control" id="formGroupExampleInput" placeholder="ingrese NOTA" name="nota_input">
+		  	</div>
+				<button type="submit" value=" Send" class="btn btn-success" id="submit" />AGREGAR NOTA</button>
+			</form>
+		</div>
+
+
+    <a href="{{ url_for('index') }}">VOLVER INDEX</a>
+{% endblock %}
